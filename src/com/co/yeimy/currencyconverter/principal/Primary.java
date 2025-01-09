@@ -1,9 +1,12 @@
+package com.co.yeimy.currencyconverter.principal;
 import java.util.Scanner;
+import com.google.gson.annotations.SerializedName;
 
 public class Primary {
     public static void main(String[] args){
         int opcion = 0;
         String moneda = null;
+        String dolar, peso_argentino, real_brasileño, peso_colombiano; 
 
         System.out.println("**********************");
         System.out.println("\nBienvenid@ al Conversor de Moneda");

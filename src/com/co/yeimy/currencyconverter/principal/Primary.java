@@ -1,8 +1,9 @@
 package com.co.yeimy.currencyconverter.principal;
+import com.co.yeimy.currencyconverter.services.APIExchangeRate;
 import java.util.Scanner;
-import com.google.gson.annotations.SerializedName;
 
 public class Primary {
+    @SuppressWarnings("resource")
     public static void main(String[] args){
         int opcion = 0;
         String moneda = null;
@@ -21,11 +22,11 @@ public class Primary {
                 6 - Peso Colombiano ==> Dolar
                 7 - Salir
                 """;              
-        @SuppressWarnings("resource")
+
         Scanner teclado = new Scanner(System.in);
-            while (opcion != 7) {
+        System.out.println(menu);
+        while (opcion != 7) {
             try {
-                System.out.println(menu);
                 opcion = teclado.nextInt();
                 
                 switch (opcion) {
@@ -36,7 +37,8 @@ public class Primary {
                     case 5 -> moneda = "UPS";
                     case 6 -> moneda = "COP";
                     default -> {
-                        System.out.println("Opción incorrecta");    
+                        System.out.println("Opción incorrecta");
+                        break;    
                     }
                 }
                 APIExchangeRate rate = new APIExchangeRate();

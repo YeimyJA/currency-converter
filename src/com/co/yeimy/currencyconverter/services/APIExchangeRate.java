@@ -1,9 +1,10 @@
-package com.co.yeimy.currencyconverter.principal;
+package com.co.yeimy.currencyconverter.services;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+import com.co.yeimy.currencyconverter.principal.Primary;
 import com.google.gson.Gson;
 
 public class APIExchangeRate {

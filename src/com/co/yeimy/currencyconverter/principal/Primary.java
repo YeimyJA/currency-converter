@@ -25,10 +25,9 @@ public class Primary {
 
         Scanner teclado = new Scanner(System.in);
         System.out.println(menu);
+        opcion = teclado.nextInt();
         while (opcion != 7) {
             try {
-                opcion = teclado.nextInt();
-                
                 switch (opcion) {
                     case 1 -> moneda = "USD";
                     case 2 -> moneda = "ARS";
@@ -43,8 +42,10 @@ public class Primary {
                 }
                 APIExchangeRate rate = new APIExchangeRate();
                 rate.exchangeRate(moneda);
+                break;
             } catch (Exception ex) {
                 System.out.println("Error intente de nuevo.");
+                break;
             }
         }                      
     }

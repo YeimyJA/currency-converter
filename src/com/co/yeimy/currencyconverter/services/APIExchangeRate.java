@@ -20,11 +20,11 @@ public class APIExchangeRate {
         HttpResponse<String> response = client
         .send(request, HttpResponse.BodyHandlers.ofString());
         String json = response.body();
-        System.out.println(json);   
+        //System.out.println(json);   
         
         Gson gson = new Gson();
         ConversionRatesAPI convertion = gson.fromJson(json, ConversionRatesAPI.class);
-        ConversionRates rate = new ConversionRates(convertion);      
+        ConversionRates rate = new ConversionRates(convertion); 
         return rate;
         //Type tipoMapa = new TypeToken<Map<String, String>>(){}.getType();
         //Map<String,String> mapa = gson2.fromJson(convertion.conversion_rates(), tipoMapa);

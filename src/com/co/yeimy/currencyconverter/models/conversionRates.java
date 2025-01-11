@@ -1,4 +1,32 @@
 package com.co.yeimy.currencyconverter.models;
-public record conversionRates(String base_code, String conversion_rates) {
+import java.util.Map;
 
+import com.co.yeimy.currencyconverter.util.Util;
+
+public class ConversionRates {
+
+    private String base_code;
+    private Map<String,String> conversion_rates;
+    Util util = new Util();
+
+    public ConversionRates(ConversionRatesAPI convertion) {
+        base_code = convertion.base_code();
+        conversion_rates = convertion.conversion_rates();
+    }
+
+    public void setBase_code(String base_code) {
+        this.base_code = base_code;
+    }
+
+    public void setConversion_rates(Map<String, String> conversion_rates) {
+        this.conversion_rates = conversion_rates;
+    }
+
+    public String getBase_code() {
+        return base_code;
+    }
+
+    public Map<String, String> getConversion_rates() {
+        return conversion_rates;      
+    }
 }

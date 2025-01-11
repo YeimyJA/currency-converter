@@ -7,8 +7,7 @@ public class Primary {
     public static void main(String[] args){
         int opcion = 0;
         String moneda = null;
-        String dolar, peso_argentino, real_brasileño, peso_colombiano; 
-
+        
         System.out.println("**********************");
         System.out.println("\nBienvenid@ al Conversor de Moneda");
 
@@ -22,31 +21,29 @@ public class Primary {
                 6 - Peso Colombiano ==> Dolar
                 7 - Salir
                 """;              
-
         Scanner teclado = new Scanner(System.in);
         System.out.println(menu);
         opcion = teclado.nextInt();
-        while (opcion != 7) {
-            try {
-                switch (opcion) {
+        do{
+        switch (opcion) {
                     case 1 -> moneda = "USD";
                     case 2 -> moneda = "ARS";
                     case 3 -> moneda = "UPS";
                     case 4 -> moneda = "BRL";
                     case 5 -> moneda = "UPS";
                     case 6 -> moneda = "COP";
-                    default -> {
-                        System.out.println("Opción incorrecta");
-                        break;    
-                    }
                 }
-                APIExchangeRate rate = new APIExchangeRate();
-                rate.exchangeRate(moneda);
-                break;
-            } catch (Exception ex) {
-                System.out.println("Error intente de nuevo.");
-                break;
-            }
+                if (opcion< 7) 
+                    try {        
+                        APIExchangeRate rate = new APIExchangeRate();
+                        System.out.println(rate.exchangeRate(moneda).getConversion_rates().get(moneda));
+                    } catch (Exception ex) {
+                        System.out.println("Error intente de nuevo."+ex);
+                    }
+                else{
+                    System.out.println("Opción incorrecta");}
+                    System.out.println(menu);
+                    opcion = teclado.nextInt();
+        }while (opcion !=7);   
         }                      
     }
-}

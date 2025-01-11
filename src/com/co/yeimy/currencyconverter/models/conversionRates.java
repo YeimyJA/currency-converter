@@ -8,10 +8,10 @@ public class ConversionRates {
     private String base_code;
     private Map<String,String> conversion_rates;
     Util util = new Util();
-     
-    public ConversionRates(ConversionRatesAPI rate) {
-        base_code = rate.base_code();
-        conversion_rates = rate.conversion_rates();
+
+    public ConversionRates(ConversionRatesAPI convertion) {
+        base_code = convertion.base_code();
+        conversion_rates = convertion.conversion_rates();
     }
 
     public void setBase_code(String base_code) {

@@ -1,8 +1,8 @@
 package com.co.yeimy.currencyconverter.principal;
-
-import com.co.yeimy.currencyconverter.services.APIExchangeRate;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import com.co.yeimy.currencyconverter.services.APIExchangeRate;
 import com.co.yeimy.currencyconverter.util.Util;
 
 public class Primary {
